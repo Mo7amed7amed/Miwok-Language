@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.mohamed.miwok.MainActivity">
+<LinearLayout
+    android:id="@+id/Linear"
+    style="@style/LinearLayout">
+    <TextView
+        android:id="@+id/Numbers"
+        style="@style/Category_Style"
+        android:background="@color/category_numbers"
+        android:text="@string/category_numbers"
+        android:onClick="openNumberList"/>
+
+    <TextView
+        android:id="@+id/Family"
+        style="@style/Category_Style"
+        android:background="@color/category_family"
+        android:text="@string/category_family"
+        android:onClick="openFamelyList"/>
+
+    <TextView
+        android:id="@+id/Colors"
+        style="@style/Category_Style"
+        android:background="@color/category_colors"
+        android:text="@string/category_colors"
+        android:onClick="openColorsList"/>
+
+    <TextView
+        android:id="@+id/Phrases"
+        style="@style/Category_Style"
+        android:background="@color/category_phrases"
+        android:text="@string/category_phrases"
+        android:onClick="openPhrasesList"/>
+
+</LinearLayout>
+
+</android.support.constraint.ConstraintLayout>
