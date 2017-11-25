@@ -12,29 +12,25 @@
         android:id="@+id/Numbers"
         style="@style/Category_Style"
         android:background="@color/category_numbers"
-        android:text="@string/category_numbers"
-        android:onClick="openNumberList"/>
+        android:text="@string/category_numbers" />
 
     <TextView
         android:id="@+id/Family"
         style="@style/Category_Style"
         android:background="@color/category_family"
-        android:text="@string/category_family"
-        android:onClick="openFamelyList"/>
+        android:text="@string/category_family" />
 
     <TextView
         android:id="@+id/Colors"
         style="@style/Category_Style"
         android:background="@color/category_colors"
-        android:text="@string/category_colors"
-        android:onClick="openColorsList"/>
+        android:text="@string/category_colors" />
 
     <TextView
         android:id="@+id/Phrases"
         style="@style/Category_Style"
         android:background="@color/category_phrases"
-        android:text="@string/category_phrases"
-        android:onClick="openPhrasesList"/>
+        android:text="@string/category_phrases" />
 
 </LinearLayout>
 

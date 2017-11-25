@@ -5,19 +5,12 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.example.mohamed.miwok.NumbersActivity">
-<LinearLayout
-    android:id="@+id/rootView"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:padding="16dp">
+
     <ListView
         android:id="@+id/list"
-        android:padding="16dp"
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
     </ListView>
 
-</LinearLayout>
 </android.support.constraint.ConstraintLayout>
