@@ -1,47 +1,40 @@
 package com.example.mohamed.miwok;
 
+import android.media.MediaPlayer;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 
 import java.util.ArrayList;
 
 public class NumbersActivity extends AppCompatActivity {
-
+MediaPlayer mMediaPlayer ;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_numbers);
 
         //Create an ArrayList of Words
-        ArrayList<Word> Words=new ArrayList<Word>();
+        final ArrayList<Word> Words=new ArrayList<Word>();
 
-        Words.add(new Word("One" ,"Lutti" ,R.drawable.number_one));
-        Words.add(new Word("Two" ,"otiiko",R.drawable.number_two));
-        Words.add(new Word("Three" ,"tolookosu",R.drawable.number_three));
-        Words.add(new Word("Four" ,"oyyisa",R.drawable.number_four));
-        Words.add(new Word("Five" ,"massokka",R.drawable.number_five));
-        Words.add(new Word("Six" ,"temmokka",R.drawable.number_six));
-        Words.add(new Word("Seven" ,"kenekaku",R.drawable.number_seven));
-        Words.add(new Word("Eight" ,"kawinta",R.drawable.number_eight));
-        Words.add(new Word("Nine" ,"wo’e",R.drawable.number_nine));
-        Words.add(new Word("Ten" ,"na’aacha",R.drawable.number_ten));
-
-//        Words.add("One");
-//        Words.add("Two");
-//        Words.add("Three");
-//        Words.add("Four");
-//        Words.add("Five");
-//        Words.add("Six");
-//        Words.add("Seven");
-//        Words.add("Eight");
-//        Words.add("Nine");
-//        Words.add("Ten");
+        Words.add(new Word("One" ,"Lutti" ,R.drawable.number_one ,R.raw.number_one));
+        Words.add(new Word("Two" ,"otiiko",R.drawable.number_two,R.raw.number_two));
+        Words.add(new Word("Three" ,"tolookosu",R.drawable.number_three,R.raw.number_three));
+        Words.add(new Word("Four" ,"oyyisa",R.drawable.number_four,R.raw.number_four));
+        Words.add(new Word("Five" ,"massokka",R.drawable.number_five,R.raw.number_five));
+        Words.add(new Word("Six" ,"temmokka",R.drawable.number_six,R.raw.number_six));
+        Words.add(new Word("Seven" ,"kenekaku",R.drawable.number_seven,R.raw.number_seven));
+        Words.add(new Word("Eight" ,"kawinta",R.drawable.number_eight,R.raw.number_eight));
+        Words.add(new Word("Nine" ,"wo’e",R.drawable.number_nine,R.raw.number_nine));
+        Words.add(new Word("Ten" ,"na’aacha",R.drawable.number_ten,R.raw.number_ten));
 
 //        LinearLayout rootView= (LinearLayout) findViewById(R.id.rootView);
         // Create an {@link WordAdapter}, whose data source is a list of {@link Word}s. The
@@ -56,6 +49,18 @@ public class NumbersActivity extends AppCompatActivity {
         // Make the {@link ListView} use the {@link WordAdapter} we created above, so that the
         // {@link ListView} will display list items for each {@link Word} in the list.
         listView.setAdapter(adapter);
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+               // Toast .makeText(NumbersActivity.this ,"I Really Get In Love With You" ,Toast.LENGTH_LONG).show();
+
+// Get the {@link Word} object at the given position the user clicked on
+               Word word = Words.get(position);
+              mMediaPlayer =  MediaPlayer.create(NumbersActivity.this ,word.getmAudioResourceId());
+                //start the audio file
+              mMediaPlayer.start();
+            }
+        });
 //        ArrayAdapter<Word> itemsAdapter = new ArrayAdapter<Word>(this, R.layout.list_item, Words);
 //
 //        ListView listView = (ListView) findViewById(R.id.list);
@@ -94,15 +99,7 @@ public class NumbersActivity extends AppCompatActivity {
 
 // //Verify the content of the arrayList by printing out Each arrayList element to the logs
 //        Log.v("NumbersActivity" ,"We Check Word At Index 0 " + Words.get(0));
-//        Log.v("NumbersActivity" ,"We Check Word At Index 1 " + Words.get(1));
-//        Log.v("NumbersActivity" ,"We Check Word At Index 2 " + Words.get(2));
-//        Log.v("NumbersActivity" ,"We Check Word At Index 3 " + Words.get(3));
-//        Log.v("NumbersActivity" ,"We Check Word At Index 4 " + Words.get(4));
-//        Log.v("NumbersActivity" ,"We Check Word At Index 5 " + Words.get(5));
-//        Log.v("NumbersActivity" ,"We Check Word At Index 6 " + Words.get(6));
-//        Log.v("NumbersActivity" ,"We Check Word At Index 7 " + Words.get(7));
-//        Log.v("NumbersActivity" ,"We Check Word At Index 8 " + Words.get(8));
-//        Log.v("NumbersActivity" ,"We Check Word At Index 9 " + Words.get(9));
+
 
 
     }
