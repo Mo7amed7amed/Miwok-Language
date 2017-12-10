@@ -35,7 +35,9 @@ public class wordAdapter extends ArrayAdapter<Word> {
         }
         Word currentWord = getItem(position);
         TextView miwokTextview = (TextView) listItemView.findViewById(R.id.miwok_text_view);
-        miwokTextview.setText(currentWord.getmMiwokTranslation());
+        if (currentWord != null) {
+            miwokTextview.setText(currentWord.getmMiwokTranslation());
+        }
 
         TextView defaultTextview = (TextView) listItemView.findViewById(R.id.default_tex_view);
         defaultTextview.setText(currentWord.getmDefaultTranslation());

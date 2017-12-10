@@ -6,44 +6,85 @@ package com.example.mohamed.miwok;
 
 public class Word {
 
-    //Default translation for the word
+    /** Default translation for the word */
     private String mDefaultTranslation;
-    //Miwok translation for the word
-    private String mMiwokTranslation;
-    //Image Resource id For the word
-    private int mImageResourceId = NO_IMAGE_PROVIDED; ;
-    //Audio Resource Id for the word
-    private int mAudioResourceId;
-    /** Constant value that represents no image was provided for this word */
-    private static final int NO_IMAGE_PROVIDED = 0;
 
-    public Word(String defaultTranslation ,String miwokTranslation , int audioResourceId){
-        mDefaultTranslation = defaultTranslation ;
-        mMiwokTranslation = miwokTranslation ;
-        mAudioResourceId = audioResourceId ;
+    /** Miwok translation for the word */
+    private String mMiwokTranslation;
+
+    /** Audio resource ID for the word */
+    private static int mAudioResourceId;
+
+    /** Image resource ID for the word */
+    private int mImageResourceId = NO_IMAGE_PROVIDED;
+
+    /** Constant value that represents no image was provided for this word */
+    private static final int NO_IMAGE_PROVIDED = -1;
+
+    /**
+     * Create a new Word object.
+     *
+     * @param defaultTranslation is the word in a language that the user is already familiar with
+     *                           (such as English)
+     * @param miwokTranslation is the word in the Miwok language
+     * @param audioResourceId is the resource ID for the audio file associated with this word
+     */
+    public Word(String defaultTranslation, String miwokTranslation, int audioResourceId) {
+        mDefaultTranslation = defaultTranslation;
+        mMiwokTranslation = miwokTranslation;
+        mAudioResourceId = audioResourceId;
     }
-    public Word(String defaultTranslation ,String miwokTranslation , int ImageResourceId ,int audioResourceId){
-        mDefaultTranslation = defaultTranslation ;
-        mMiwokTranslation = miwokTranslation ;
-        mImageResourceId = ImageResourceId;
-        mAudioResourceId = audioResourceId ;
+
+    /**
+     * Create a new Word object.
+     *
+     * @param defaultTranslation is the word in a language that the user is already familiar with
+     *                           (such as English)
+     * @param miwokTranslation is the word in the Miwok language
+     * @param imageResourceId is the drawable resource ID for the image associated with the word
+     * @param audioResourceId is the resource ID for the audio file associated with this word
+     */
+    public Word(String defaultTranslation, String miwokTranslation, int imageResourceId,
+                int audioResourceId) {
+        mDefaultTranslation = defaultTranslation;
+        mMiwokTranslation = miwokTranslation;
+        mImageResourceId = imageResourceId;
+        mAudioResourceId = audioResourceId;
     }
-    //Get The Default Translation of The Word
-    public String getmDefaultTranslation(){
-        return mDefaultTranslation ;
+
+
+    /**
+     * Get the default translation of the word.
+     */
+    public String getmDefaultTranslation() {
+        return mDefaultTranslation;
     }
-    //Get The Miwok translation for the word
-    public String getmMiwokTranslation(){
+
+    /**
+     * Get the Miwok translation of the word.
+     */
+    public String getmMiwokTranslation() {
         return mMiwokTranslation;
     }
 
-    public int getmImageResourceId(){return mImageResourceId;}
+    /**
+     * Return the image resource ID of the word.
+     */
+    public int getmImageResourceId() {
+        return mImageResourceId;
+    }
 
-    public int getmAudioResourceId(){return mAudioResourceId;}
     /**
      * Returns whether or not there is an image for this word.
      */
     public boolean hasImage() {
         return mImageResourceId != NO_IMAGE_PROVIDED;
     }
+
+    /**
+     * Return the audio resource ID of the word.
+     */
+    public static int getAudioResourceId() {
+        return mAudioResourceId;
     }
+}
