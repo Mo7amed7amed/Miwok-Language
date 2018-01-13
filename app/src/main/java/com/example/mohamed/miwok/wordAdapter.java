@@ -24,7 +24,6 @@ public class WordAdapter extends ArrayAdapter<Word> {
         super(context, 0, words);
         mColorResourceId = colorResourceId;
     }
-
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         // Check if the existing view is being reused, otherwise inflate the view
@@ -48,14 +47,9 @@ public class WordAdapter extends ArrayAdapter<Word> {
         // Get the version number from the current AndroidFlavor object and
         // set this text on the number TextView
         miwokTextView.setText(currentAndroidFlavor.getMiwokTranslation());
-
-
-
-
         View textContainer=listItemView.findViewById(R.id.textcontainer);
         int color = ContextCompat.getColor(getContext(),mColorResourceId);
         textContainer.setBackgroundColor(color);
-
         // Find the ImageView in the list_item.xml layout with the ID list_item_icon
         ImageView iconView = (ImageView) listItemView.findViewById(R.id.image);
         // Get the image resource ID from the current AndroidFlavor object and
